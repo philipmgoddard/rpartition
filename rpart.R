@@ -32,7 +32,7 @@ recursivePart <- function(pred, y, min_grp = 10) {
       count <- count + 1
     }
   }
-  cat("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+  cat("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
   cat("\nPartition:")
   cat("\nsse=", sseBest,
       "\ncol index=", colInd,
@@ -54,10 +54,8 @@ recursivePart <- function(pred, y, min_grp = 10) {
   
   depth <<- depth + 1
 
-  # call recursively
-  # here is the issue- where both group 2
-  # terminal, never met as group 1 gets hit first
   # clunky but i think you need the 4 statements
+  # due to recursive nature
   if(nrow(group1x) <= min_grp)  {
     cat("\nterminal node:",
         "\ndepth =", depth,
